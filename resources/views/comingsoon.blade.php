@@ -1,24 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Coming Soon</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f3f3f3;
-            font-family: Arial, sans-serif;
-        }
-        h1 {
-            font-size: 3em;
-            text-align: center;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to AppointlyHealth</title>
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
-    <h1>Coming Soon!</h1>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1>Welcome to AppointlyHealth</h1>
+            <p>Your healthcare scheduling solution</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; {{ date('Y') }} AppointlyHealth. All rights reserved.</p>
+    </footer>
 </body>
 </html>
+
