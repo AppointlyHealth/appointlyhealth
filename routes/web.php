@@ -22,19 +22,11 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-// New routes
-Route::get('/about', function () {
-    // return view('about');
-})->name('about');
-
-Route::get('/services', function () {
-    // return view('services');
-})->name('services');
-
-Route::get('/contact', function () {
-    // return view('contact');
-})->name('contact');
-// End of new routes
+// About, Services, and Contact routes
+Route::view('/about', 'about')->name('about');
+Route::view('/services', 'services')->name('services');
+Route::view('/contact', 'contact')->name('contact');
+// End of About, Services, and Contact routes
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -43,3 +35,4 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
