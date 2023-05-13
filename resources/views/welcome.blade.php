@@ -10,10 +10,21 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                <li><a href="{{ route('about') }}">About</a></li>
+                <li><a href="{{ route('services') }}">Services</a></li>
+                <li><a href="{{ route('contact') }}">Contact</a></li>
+                @if (Route::has('login'))
+                    @auth
+                        <li><a href="{{ url('/dashboard') }}">Dashboard</a></li>
+                    @else
+                        <li><a href="{{ route('login') }}">Log in</a></li>
+
+                        @if (Route::has('register'))
+                            <li><a href="{{ route('register') }}">Register</a></li>
+                        @endif
+                    @endauth
+                @endif
             </ul>
         </nav>
     </header>
